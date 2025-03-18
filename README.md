@@ -15,6 +15,12 @@ A comprehensive web-based JSON toolkit that provides JSON formatting, validation
   - User-friendly interface
   - Easy submission process
 
+## 🌟 Screenshots  
+
+![JSON Formatter Screenshot](effect.jpg)
+
+*Above: A screenshot of the JSON Formatter in action.*
+
 ## 🛠️ Technologies
 
 - HTML5
