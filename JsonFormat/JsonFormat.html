@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>JSON格式化 | JSON在线 | JSON解析 工具 - JSONEasy</title>
+    <meta name="keywords" content="JSON,JSON格式化,JSON在线,JSON解析">
+    <meta name="description" content="在JSONEasy，我们提供在线 JSON格式化、JSON解析、JSON校验等一系列服务，是您处理 JSON在线 数据的首选工具。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon_32.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo-container">
+          <div class="logo">JSON</div>
+          <div class="logo-title">
+            <h1 onclick="goHome()">JSON在线格式化工具</h1>
+          </div>
+        </div>        
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop">
+        <ul class="menu">
+          <li class="dropdown">
+              <label for="drop-1" class="toggle">更多实用工具</label> <a href="#"><span class="three-lines"></span><span class="more-dev">更多实用</span> <span class="more-tools">工具</span></a> <input type="checkbox" id="drop-1">
+              <ul>
+                  <li class="json-formatter"><a onclick="goJsonFormatter()"><strong>JSON格式化</strong><br></a></li>
+                  <li class="date-calculator"><a onclick="goDateCalculator()"><strong>日期计算器</strong><br></a></li>
+              </ul>
+          </li>
+        </ul>       
+      </nav> 
+    </header>
+    <div class="wrapper">
+      <main>
+        <section>
+            <p>请输入要处理的JSON字符串：</p>
+            <div class="json-input-wrapper">
+              <textarea id="json-input" class="json-input"></textarea>
+            </div>            
+        </section>
+        <section class="button-group">
+            <input type="button" class="button first-in-group" value="格式化" onclick="formatJson()" id="json-format">
+            <input type="button" class="button" value="压缩" onclick="unformatJson()" id="json-unformat">
+            <input type="button" class="button first-in-group" value="转义" onclick="escapeJson()" id="json-escape">
+            <input type="button" class="button" value="去转义" onclick="unescapeJson()" id="json-unescape">
+            <input type="button" class="button first-in-group unicode-to-chinese" value="Unicode -> 中文" onclick="unicodeToChinese()" id="unicode-to-chinese">
+            <input type="button" class="button chinese-to-unicode" value="中文 <- Unicode" onclick="chineseToUnicode()" id="chinese-to-unicode">
+            <input type="button" class="button first-in-group" value="清空" onclick="clearJson()" id="json-clear">
+            <input type="button" class="button first-in-group copy-button" value="复制" onclick="copyJson()" id="json-copy">
+        </section>
+        <section id="result-container" class="hidden"></section>
+      </main>
+      <footer>
+        <div class="copy-container">
+          © <span id="copy-year">2023</span> <span onclick="goHome()" id="home-link">JSONEasy.com</span> — <a href="feedback.html" title="提供反馈或建议">意见反馈</a>
+        </div>
+        <div class="icp-container">
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="icp-link">京ICP备xxxxxxxx号-1 | </a>
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010602104924" target="_blank" rel="noopener noreferrer" class="icp-link">京公网安备 xxxxxxxx号</a>
+        </div>
+      </footer> 
+    </div>
+    <script defer src="load-scripts.js"></script>
+  </body>
+</html>

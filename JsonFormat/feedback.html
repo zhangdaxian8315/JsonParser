@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="我们珍视您的反馈，这将帮助我们改进服务。请在下面分享您的想法。">
+    <meta name="keywords" content="意见, 反馈, 用户反馈, 服务改进">
+    <title>意见反馈</title>
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ce04d5c0f38bd75216f8e2a9568ef4f9";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBMVKK6XE3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MBMVKK6XE3');
+    </script>  
+</head>
+<body>
+    <header>
+      <nav>
+        <div class="logo-container">
+          <div class="logo">JSON</div>
+          <div class="logo-title">
+            <h1 onclick="goHome()">JSONEasy</h1>
+          </div>
+        </div>
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop">
+        <ul class="menu">
+        <li class="dropdown">
+            <label for="drop-1" class="toggle">更多实用工具</label> <a href="#"><span class="three-lines"></span><span class="more-dev">更多实用</span> <span class="more-tools">工具</span></a> <input type="checkbox" id="drop-1">
+            <ul>
+                <li class="json-formatter"><a onclick="goJsonFormatter()"><strong>JSON格式化</strong><br></a></li>
+                <li class="date-calculator"><a onclick="goDateCalculator()"><strong>日期计算器</strong><br></a></li>
+            </ul>
+        </li>
+        </ul>     
+      </nav> 
+    </header>
+    <div class="wrapper">
+        <main>
+            <div class="feedback-container" id="feedback-container">
+                <div id="feedback-content">
+                <h1 id="feedback-h1">意见反馈</h1>
+                <p id="feedback-p">请在下面的文本框中输入您的意见或建议：</p>
+                <textarea id="feedback-text" maxlength="200"></textarea>
+                <span id="char-counter" class="char-counter">0 / 200</span>
+                <button id="submit-feedback">提交</button>
+                <div id="feedback-response" class="hidden"></div>
+                </div>
+                <div id="thanks-message" class="hidden">感谢您的反馈！</div>
+                <div id="input-warning" class="popup hidden">请至少输入 10 个字符，以便我们更好地了解您的意见。</div>
+            </div>       
+        </main>
+        <footer>
+            <div class="copy-container">
+                © <span id="copy-year">2023</span> <span onclick="goHome()" id="home-link">JSONEasy.com</span>
+            </div>
+            <div class="icp-container">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="icp-link">京ICP备xxxxxxxx号-1 | </a>
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010602104924" target="_blank" rel="noopener noreferrer" class="icp-link">京公网安备 xxxxxxxx号</a>
+            </div>
+        </footer>
+    </div>
+    <script src="feedback.js"></script>
+</body>
+</html>

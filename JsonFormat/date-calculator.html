@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="一个简单的日期计算器，可以进行日期推算和计算日期差">
+    <meta name="keywords" content="日期计算器,日期推算,计算日期差">
+    <title>日期计算器</title>
+    <link rel="stylesheet" href="date-calculator.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ce04d5c0f38bd75216f8e2a9568ef4f9";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBMVKK6XE3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MBMVKK6XE3');
+    </script>  
+</head>
+<body>
+    <header class="main-header">
+      <nav>
+          <div class="logo-container">
+              <div class="logo">JSON</div>
+              <div class="logo-title">
+                <h1 onclick="goHome()">日期计算器</h1>
+              </div>   
+          </div>
+          <label for="drop" class="toggle">Menu</label>
+          <input type="checkbox" id="drop">
+              <ul class="menu">
+              <li class="dropdown">
+                  <label for="drop-1" class="toggle">更多实用工具</label> <a href="#"><span class="three-lines"></span><span class="more-dev">更多实用</span> <span class="more-tools">工具</span></a> <input type="checkbox" id="drop-1">
+                  <ul>
+                    <li class="json-formatter"><a onclick="goJsonFormatter()"><strong>JSON格式化</strong><br></a></li>
+                    <li class="date-calculator"><a onclick="goDateCalculator()"><strong>日期计算器</strong><br></a></li>
+                  </ul>
+              </li>
+          </ul> 
+        </nav> 
+    </header>
+    <div class="wrapper">
+        <main>
+          <section id="calculator">
+            <header>
+              <h1 class="header-title">日期计算器</h1>
+              <!-- <p class="feature-description">快速、准确向前向后推算日期，计算日期差</p> -->
+            </header>
+            <!-- <div class="divider"></div>    -->
+            <article>
+              <h2>日期推算</h2>
+              <div class="date-inputs">
+                <div class="input-group-container"> <!-- 新增的容器 -->
+                  <div class="input-group">
+                    <label>选择日期</label>
+                    <div class="divider-line-vert"></div> 
+                    <div class="date-selection">
+                      <select id="year1"></select><span>年</span>
+                      <select id="month1"></select><span>月</span>
+                      <select id="day1"></select><span>日</span>
+                    </div>
+                  </div>
+                  <div class="input-group">
+                    <label>天数相差</label>
+                    <div class="divider-line-vert"></div> 
+                    <input type="number" id="days" placeholder="天数">
+                    <label>(输入负数向前计算)</label>
+                  </div>
+                </div>
+              </div>
+              <div class="divider-line-horz"></div> 
+              <button onclick="calculateDate()">计   算</button>
+              <p id="result1"></p>
+              <div id="input-warning" class="popup hidden">请您输入天数</div>
+            </article>
+            <div class="divider"></div>            
+            <article>
+              <h2>计算日期差</h2>
+              <div class="date-diff">
+                <div class="input-group">
+                  <label>开始日期</label>
+                  <div class="divider-line-vert"></div> 
+                  <div class="date-selection">
+                    <select id="year2"></select><span>年</span>
+                    <select id="month2"></select><span>月</span>
+                    <select id="day2"></select><span>日</span>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label>结束日期</label>
+                  <div class="divider-line-vert"></div> 
+                  <div class="date-selection">
+                    <select id="year3"></select><span>年</span>
+                    <select id="month3"></select><span>月</span>
+                    <select id="day3"></select><span>日</span>
+                  </div>
+                </div>
+              </div>
+              <div class="divider-line-horz"></div>
+              <button onclick="calculateDiff()">计   算</button>
+              <p id="result2"></p>
+            </article>                        
+          </section>
+        </main>
+        <footer>
+            <div class="copy-container">
+              © <span id="copy-year">2023</span> <span onclick="goHome()" id="home-link">JSONEasy.com</span> — <a href="feedback.html" title="提供反馈或建议">意见反馈</a>
+            </div>
+            <div class="icp-container">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="icp-link">京ICP备xxxxxxxx号-1 | </a>
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010602104924" target="_blank" rel="noopener noreferrer" class="icp-link">京公网安备 xxxxxxxxxx号</a>
+            </div>
+        </footer>
+    </div>
+    <script src="date-calculator.js"></script>
+</body>
+</html>
